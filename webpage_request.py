@@ -1,0 +1,12 @@
+import requests
+res = requests.get('https://api.twitter.com/2/tweets/')
+print("Response text of https://api.twitter.com/2/tweets:")
+print(res.text)
+print("\n==============================================================================")
+print("\nContent of the the url:")
+print(res.content)
+print("\n==============================================================================")
+print("\nRaw data of the the url:")
+r = requests.get('https://api.twitter.com/2/tweets/search/recent', stream = True)
+print(r.raw)
+print(r.raw.read(15))
